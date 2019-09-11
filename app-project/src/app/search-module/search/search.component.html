@@ -1,0 +1,19 @@
+<form>
+    <div class="container">
+        <header>
+<h1>
+    Búscador
+</h1>
+</header>
+<p></p>
+<section>
+<div>
+    <input id="query" type="text" name="query" placeholder="Query a ejecutar" [(ngModel)]="query">
+    <input type="submit" class="btn btn-outline-warning btn-rounded btn-sm my-0" value="{{labelButton}}" (click)="search($event)" class="btn btn-primary">
+   <p></p>
+    <p>Parametro de búsqueda: {{query}}</p>
+    <p>Resultado: {{result}}</p>
+</div>
+</section>
+</div>
+</form>

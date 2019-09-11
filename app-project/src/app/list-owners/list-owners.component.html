@@ -1,0 +1,12 @@
+<div class="container">
+        <div class="box">
+            <h3>Owners:</h3>
+<ul>
+    <li *ngFor="let owner of owners; let i = index">
+        {{owner.firstName}} {{owner.lastName}} - {{owner.city}}
+    </li>
+</ul>
+        </div>
+</div>
+
+

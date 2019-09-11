@@ -1,0 +1,20 @@
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  input[type=text]:focus {
+    width: 100%;
+  }
+
+  h1 {
+    color: 	#00ffae;
+  }
+
+  div {
+    text-align: justify;
+    background-color: 	#e6fff7;
+    text-align: justify;
+  }
