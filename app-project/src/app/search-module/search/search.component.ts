@@ -10,23 +10,25 @@ export class SearchComponent implements OnInit {
   public query: string;
   public result: string;
 
+  
   @Input() labelButton: string;
-
-  @Output()
-  onResult: EventEmitter<any> = new EventEmitter();
+  @Input() placeholder: string;
+  @Output() searchEvent = new EventEmitter();
 
 
   constructor() {
     this.query = '';
    }
 
-   search() { 
-     this.result = 'bla bla bla ' + this.query + '.';
-     this.onResult.emit({query: this.query, result: this.result});
-   }
- 
-  ngOnInit() {
-    this.labelButton = this.labelButton ? this.labelButton : 'Search';
+   ngOnInit() {
+    if (this.labelButton === '' || !this.labelButton) {
+      this.labelButton = 'Search!';
+    }
+    this.placeholder = this.placeholder ? this.placeholder : '';
   }
-
+  search(event): void {
+    event.preventDefault();
+    this.result = `bla bla bla "${this.query}".`;
+    this.searchEvent.emit({ query: this.query });
+  }
 }

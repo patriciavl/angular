@@ -6,15 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'App works!';
+  title = 'app works!';
+  query: string;
   constructor() {
-    setTimeout(
-      () => {
-        this.title = '';
-      },
-    1000);
+
   }
-  getResult(event){
-    console.log(event);
+  search(event): void {
+    this.query = event.query;
   }
 }

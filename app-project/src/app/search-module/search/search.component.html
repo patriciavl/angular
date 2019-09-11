@@ -8,11 +8,17 @@
 <p></p>
 <section>
 <div>
-    <input id="query" type="text" name="query" placeholder="Query a ejecutar" [(ngModel)]="query">
-    <input type="submit" class="btn btn-outline-warning btn-rounded btn-sm my-0" value="{{labelButton}}" (click)="search($event)" class="btn btn-primary">
-   <p></p>
-    <p>Parametro de búsqueda: {{query}}</p>
-    <p>Resultado: {{result}}</p>
+    <form class="p-2 mt-3">
+        <div class="form-group d-flex">
+          <span class="ui-float-label">
+            <input id="query" name="query" type="text" pInputText [(ngModel)]="query">
+            <label for="query" [innerHTML]="placeholder">Search</label>
+          </span>
+          <input type="submit" pButton class="btn btn-primary ml-1 ui-button-rounded px-3" (click)="search($event)" [value]="labelButton">
+        </div>
+        <p *ngIf="!result">Parametro de búsqueda: {{query}}</p>
+        <p class="mb-0" *ngIf="result">Resultado: {{result}}</p>
+      </form>
 </div>
 </section>
 </div>

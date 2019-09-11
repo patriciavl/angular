@@ -5,7 +5,8 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListOwnersComponent } from '../list-owners/list-owners.component';
 import { OwnerService } from './services/owner.service';
-
+import { InputTextModule } from   'primeng/inputtext';
+import { ButtonModule } from 'primeng/button'
 
 @NgModule({
   declarations: [SearchComponent, ListOwnersComponent],
@@ -14,7 +15,9 @@ import { OwnerService } from './services/owner.service';
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    InputTextModule,
+    ButtonModule
   ]
 })
 export class SearchModuleModule { }
